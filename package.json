@@ -1,0 +1,36 @@
+{
+  "name": "phonegap-ember-example",
+  "version": "0.0.0",
+  "description": "Phonegap Ember example",
+  "private": false,
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "standard": "standard app/**/*js",
+    "postinstall": "bower install",
+    "prestart": "npm run standard",
+    "start": "ember server",
+    "build": "ember build",
+    "ios": "npm run ios:build && npm run ios:start",
+    "ios:dev": "npm run ios:build:dev && npm run ios:start",
+    "ios:build:dev": "phonegap build ios",
+    "ios:build": "phonegap build ios --release",
+    "ios:start": "ios-sim launch \"./platforms/ios/build/emulator/YOUR_PROJECT_NAME_HERE.app\" --devicetypeid iPhone-6",
+    "ios:predeploy": "npm run standard",
+    "ios:deploy": "phonegap remote build ios",
+    "test": "ember test"
+  },
+  "repository": "",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "ios-sim": "^4.1.1",
+    "phonegap": "^5.3.6",
+    "standard": "^4.5.4"
+  }
+}
