@@ -10,6 +10,10 @@ This information was formed when running Ember 1.13
 
 We disabled Ember URL routes (`locationType: 'none'`). I think there was an important reason but I don't recall. The user can't see/use URLs in phonegap anyway.
 
+It is important to disable the `baseUrl` field in the `config/environment.js` file, this will insert a `<base/>` tag that causes absolute paths instead of relative paths which are required for apps running in a webview.
+
+All urls for assets should be relative to the `www` directory
+
 We build the app into the `www` directory. **NOTE** this wipes the `www` folder every build. We store assets in an `assets` folder, the content of which gets copied into the `www` folder on build.
 
 The supplied package.json doesn't include an ember build. TODO: add a basic ember app starting point.
